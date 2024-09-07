@@ -5,11 +5,15 @@ import requests
 # CREATE - address
 address = {"name": "Neo",
            "address": "The Matrix",
-           "postalcode": "",
+           "postalcode": "123",
            "city": "Zion",
-           "country": "Everland",
+           "country": "Utopia",
            "email": "neo@example.com"
            }
+response = requests.post('http://127.0.0.1:8000/api/v1/addresses/', data=address)
+print('CREATE:', response.status_code, response.text)
+
+address['postalcode'] = "qwe1234"
 response = requests.post('http://127.0.0.1:8000/api/v1/addresses/', data=address)
 print('CREATE:', response.status_code)
 
