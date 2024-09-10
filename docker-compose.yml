@@ -14,7 +14,7 @@ services:
       start_period: 10s
 
   redis:
-    container_name: redis_celery
+    container_name: redis
     image: redis
     restart: always
     ports:
